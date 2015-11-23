@@ -1,7 +1,4 @@
 <section class="l-sidebar l-sidebar--highlight">
-    <div class="box">
-        {{link-to 'Go To Licensing' 'jurisdiction'}}
-    </div>
     <article class="widget">
         <label class="widget-label" for="">Enter your school name:</label>
         {{input class='widget-input' type='text' value=model.name}}
@@ -9,8 +6,8 @@
     <article class="widget">
         <label class="widget-label" for="">Choose a font:</label>
         <div class="box box--flush">
-            {{font-dropdown 
-                fonts=inventory.fonts 
+            {{font-dropdown
+                fonts=inventory.fonts
                 selectedFont=selectedFont
                 action='setFont'}}
         </div>
@@ -19,7 +16,7 @@
         <span class="widget-label" for="">Choose up to 3 flowers:</span>
         <div class="box box--scroll">
             <div class="grid grid--three grid--lines">
-                {{#each flower in inventory.flowers}}                                     
+                {{#each flower in inventory.flowers}}
                 <div class="grid-item">
                     <button {{action 'toggleFlower' flower}} {{bind-attr class=":btn :btn--image flower.selected"}}><img {{bind-attr src=flower.location}}></button>
                 </div>
@@ -53,7 +50,7 @@
                 <div class="grid-item">
                     <button {{bind-attr class=":btn :btn--highlight a.selected"}} {{action 'setArrangement' a}}>
                         <div class="logo--small">
-                        {{logo-view 
+                        {{logo-view
                             size='small'
                             arrangement=a.className
                             flowerObjects=flowerObjects
@@ -73,8 +70,8 @@
 </section>
 <!-- .l-sidebar -->
 
-<main class="l-content" id="content">        
-    {{logo-view 
+<main class="l-content" id="content">
+    {{logo-view
         view='main'
         arrangement=arrangement.className
         flowerObjects=flowerObjects
