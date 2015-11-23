@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Popover</title>
+  <link rel="stylesheet" href="../../../dist/css/bootstrap.min-5d5357cb3704e1f43a1f5bfed2aebf42.css" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" >
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>Popover <small>Bootstrap Visual Test</small></h1>
+  </div>
+
+  <button type="button" class="btn btn-default js-popover" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+    Popover on left
+  </button>
+  <button type="button" class="btn btn-default js-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+    Popover on top
+  </button>
+  <button type="button" class="btn btn-default js-popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+    Popover on bottom
+  </button>
+  <button type="button" class="btn btn-default js-popover" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+    Popover on right
+  </button>
+
+</div>
+
+<!-- JavaScript Includes -->
+<script src="../vendor/jquery.min-852516371a92bb96471fef0ede6cb1f0.js" integrity="sha256-fU+0bwOzypEVGbOYD1SvqTmrITyT2+pJ8P82h5xzTSo= sha512-lZjLsaZkKLUVZpBUAFbAoLH/TGWPEsct8hfCU3Y3YQniG9LhzGDmJe8l8MnFQhk9sLE8RWzmFCX7NunMxOh6xg==" ></script>
+<script src="../../transition-2acee89d5a981a84e07045f3be89d723.js" integrity="sha256-qb/ngjvahorJgjlH6FmL4b85lcAdtmD/7b54tkjOl2E= sha512-AIuPC0P+pBZK69vSxR+iTbSU1DT4zC6YS71fi7j8YaT5NJFf4Tv280amLuOVEOps1MPfwva387QYxNPUzpvrzg==" ></script>
+<script src="../../tooltip-de274f0afc5f8f6cc6ec400ea185e88d.js" integrity="sha256-o/cItdgIC6qewXyEMMQN2Z3o21+dShlMuQA2FHfx1rM= sha512-9cfdFM+aU4DKLi/zBvu6Jbs74Qjxre8FNc2QGd7EjoORYlV9ysJzKmeLSeYG2ZITcmngJgq0AClnxOmXwvY4FA==" ></script>
+<script src="../../popover-3a74ca05e7e59ab8d81fa1e0b038b7c2.js" integrity="sha256-9tjEdUU/nUxhq0PsPhQt20chuej3lQhoBepBsQM1FvI= sha512-HBKiw/012rq1y5Hy5V6k3g7k22/7kmkrnM3Qc4fbNz4cFF7gfA8MoQXkXUCZ0WSudCFlLGl+HGSnFKVAvj3nIg==" ></script>
+
+<!-- JavaScript Test -->
+<script>
+$(function () {
+  $('.js-popover').popover()
+})
+</script>
+
+</body>
+</html>
