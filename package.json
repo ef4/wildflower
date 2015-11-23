@@ -1,7 +1,7 @@
 {
   "name": "wildflower",
-  "version": "0.0.0",
-  "description": "Small description for wildflower goes here",
+  "version": "0.0.1",
+  "description": "Tools to support the creation of new Wildflower Schools.",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -12,11 +12,11 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/ef4/wildflower.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Edward Faulkner <ef@alum.mit.edu>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
