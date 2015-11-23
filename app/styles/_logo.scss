@@ -58,7 +58,7 @@
 }
 
 .logo-hide {
-    @include transition(opacity 250ms ease);
+    transition: opacity 250ms ease;
 
     &.hide {
         opacity: 0;
@@ -67,7 +67,7 @@
 
 .logo-title,
 .logo-subtitle {
-    @include transition(font-size 250ms ease);
+    transition: font-size 250ms ease;
     line-height: 1;
 }
 

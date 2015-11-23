@@ -1,9 +1,29 @@
 $fontPath: '/assets/fonts/';
-@include font-face(Avenir, font-files("#{$fontPath}avenir.ttf"));
-@include font-face(Kim1, font-files("#{$fontPath}kim1.ttf"));
-@include font-face(Kim2, font-files("#{$fontPath}kim2.ttf"));
-@include font-face(Sep, font-files("#{$fontPath}sep.ttf"));
-@include font-face(Wildchild, font-files("#{$fontPath}wildchild.ttf"));
+
+@font-face {
+    font-family: 'Avenir';
+    src: url("fonts/avenir.ttf");
+}
+
+@font-face {
+    font-family: 'Kim1';
+    src: url("fonts/kim1.ttf");
+}
+
+@font-face {
+    font-family: 'Kim2';
+    src: url("fonts/kim2.ttf");
+}
+
+@font-face {
+    font-family: 'Sep';
+    src: url("fonts/sep.ttf");
+}
+
+@font-face {
+    font-family: 'Wildchild';
+    src: url("fonts/wildchild.ttf");
+}
 
 .times {
     font-family: "Times New Roman";

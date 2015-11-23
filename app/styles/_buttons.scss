@@ -1,5 +1,4 @@
 .btn {
-    @include appearance(none);
     background-color: transparent;
     border: none;
     padding: 0;
@@ -20,7 +19,7 @@
 }
 
 .btn--square {
-    @include box-sizing(content-box);
+    box-sizing: content-box;
     width: 70px;
     height: 70px;
 }
@@ -42,7 +41,7 @@
     border-radius: 5px;
     background-color: #94cf5d;
     color: $darkgray;
-    @include transition(color 150ms, background-color 150ms);
+    transition: color 150ms, background-color 150ms;
 
     &:hover {
         color: #94cf5d;
@@ -68,29 +67,27 @@
         height: 75%;
         background: #fff;
         content: '';
-        -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
         transition: transform 0.3s, background-color 0.3s;
-        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
 
     &:before {
-        @include transform(translateY(3px) translateX(10px) rotate(-30deg));
-        @include transform-origin(0, 100%);
+        transform: translateY(3px) translateX(10px) rotate(-30deg);
+        transform-origin: 0 100%;
     }
 
     &:after {
-        @include transform(translateY(2px) translateX(10px) rotate(30deg));
-        @include transform-origin(0, 100%);
+        transform: translateY(2px) translateX(10px) rotate(30deg);
+        transform-origin: 0 100%;
     }
 
     .btn--download:hover & {
         &:before {
-            @include transform(translateY(3px) translateX(10px) rotate(-20deg));
+            transform: translateY(3px) translateX(10px) rotate(-20deg);
         }
 
         &:after {
-            @include transform(translateY(2px) translateX(10px) rotate(20deg));
+            transform: translateY(2px) translateX(10px) rotate(20deg);
         }
     }
 }

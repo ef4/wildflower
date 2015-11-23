@@ -1,7 +1,7 @@
 *,
 *:after,
 *:before {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 }
 
 html,
@@ -13,15 +13,23 @@ body {
     -webkit-font-smoothing: antialiased;
     letter-spacing: 0.1px;
     color: $gray;
+    margin: 0;
+    padding: 0;
 }
 
 input,
 select {
     width: 100%;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 }
 
 img {
     max-width: 100%;
     vertical-align: middle;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
 }

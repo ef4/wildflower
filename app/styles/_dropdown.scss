@@ -4,8 +4,7 @@
     padding: 8px 5px 10px;
     min-height: 37px;
 
-    @include transition(opacity 150ms ease-in,
-        border-color 150ms ease-in);
+    transition: opacity 150ms ease-in, border-color 150ms ease-in;
 
     &:hover {
         &:after {
@@ -57,7 +56,7 @@
     opacity: 0;
     pointer-events: none;
 
-    @include transition(opacity 150ms ease);
+    transition: opacity 150ms ease;
 }
 
 .dropdown-item {
@@ -69,8 +68,7 @@
 }
 
 .dropdown-option {
-    @include appearance(none);
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     display: block;
     padding: 0;
     width: 100%;
