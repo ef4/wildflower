@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import DS from 'ember-data';
+const { $ } = Ember;
 /* global JSZip */
 
 export default DS.Model.extend({
@@ -34,14 +35,14 @@ export default DS.Model.extend({
     let sheetId = node.getAttribute('sheetId');
     let sheet = this.document(`xl/worksheets/sheet${sheetId}.xml`);
     return {
-      read: (cellName) => sheet.querySelector(`[r="${cellName}"] v`).innerHTML,
+      read: (cellName) => $(sheet.querySelector(`[r="${cellName}"] v`)).text(),
       write: function(cellName, value) {
         let cell = sheet.querySelector(`[r="${cellName}"]`);
-        while (cell.childNodes.length) {
-          cell.childNodes[0].remove();
+        while (cell.firstChild) {
+          cell.removeChild(cell.firstChild);
         }
-        let v = sheet.createElement('v');
-        v.innerHTML = value;
+        let v = sheet.createElementNS("http://schemas.openxmlformats.org/spreadsheetml/2006/main", 'v');
+        $(v).text(value);
         cell.appendChild(v);
         return this;
       }
