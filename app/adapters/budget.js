@@ -6,7 +6,7 @@ export default DS.JSONAPIAdapter.extend({
   blobStore: Ember.inject.service(),
 
   findRecord() {
-    return fetch('/budget-template.xlsx').then(response => response.arrayBuffer()).then(data => {
+    return fetch('budget-template.xlsx').then(response => response.arrayBuffer()).then(data => {
       return {
         data: {
           id: 'template',
