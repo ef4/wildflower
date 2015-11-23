@@ -12,6 +12,7 @@ export const budgetConfig = [
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  filename: 'wildflower-school-budget.xlsx',
   actions: {
     create() {
       let budget = this.get('budget');
@@ -21,7 +22,11 @@ export default Ember.Component.extend({
           sheet.write(edit.into, this.get(edit.put));
         });
       });
-      saveAs(budget.asBlob(), 'wildflower-school-budget.xlsx');
+      saveAs(budget.asBlob(), this.get('filename'));
+      this.set('finished', true);
+    },
+    again() {
+      this.set('finished', false);
     }
   }
 });

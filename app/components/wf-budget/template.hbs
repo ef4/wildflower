@@ -13,24 +13,34 @@
   <div class="container">
 
     <div class="budget">
-      <h2>Let us help create your Wildflower School budget.</h2>
+      {{#liquid-if finished use="fade"}}
+      <div class="intro">
+        <h2>Your budget is ready.</h2>
 
-      <p>With some basic information, we'll pre-populate a financial model that you can customize.</p>
-
-      <div class="questions">
-        <div>
-          <label>First, tell us the total amount of your combined teacher salaries</label>
-          {{input value=salaries placeholder="$"}}
-        </div>
-
-        <div>
-          <label>Next, we'll need to know how much you will pay in monthly rent (not including utilities)</label>
-          {{input value=rent placeholder="$"}}
-        </div>
-        <div>
-          <button class="btn btn-primary" {{action "create"}}>Create Spreadsheet</button>
-        </div>
+        <p>A spreadsheet named <code>{{filename}}</code> has been downloaded to your computer. You may also <a href="#" {{action "again"}}>go back and do it again.</a></p>
       </div>
+    {{else}}
+      <div class="intro">
+        <h2>Let us help create your Wildflower School budget.</h2>
+
+        <p>With some basic information, we'll pre-populate a financial model that you can customize.</p>
+      </div>
+
+        <div class="questions">
+          <div>
+            <label>First, tell us the total amount of your combined teacher salaries</label>
+            {{input value=salaries placeholder="$"}}
+          </div>
+
+          <div>
+            <label>Next, we'll need to know how much you will pay in monthly rent (not including utilities)</label>
+            {{input value=rent placeholder="$"}}
+          </div>
+          <div>
+            <button class="btn btn-primary" {{action "create"}}>Create Spreadsheet</button>
+          </div>
+        </div>
+      {{/liquid-if}}
     </div>
 
   </div>
