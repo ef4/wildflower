@@ -1,13 +1,41 @@
-<h1>Let us help you create your Wildflower School budget.</h1>
+<nav class="navbar theme">
+  <div class="container">
+    <div class="navbar-header"> <a class="navbar-brand" href="./Wildflower_ Licensing_files/Wildflower_ Licensing.html">Wildflower</a> </div>
+  </div>
+</nav>
+<header class="sub-header">
+  <div class="container">
+    <h1>Budget</h1>
+  </div>
+</header>
 
-<p>With some basic information, we'll pre-populate a financial model for you that you can customize.</p>
+<main>
+  <div class="container">
 
-<p>First, tell us the total amount of your combined teacher salaries:</p>
+    <div class="budget">
+      <h2>Let us help create your Wildflower School budget.</h2>
 
-{{input value=salaries}}
+      <p>With some basic information, we'll pre-populate a financial model that you can customize.</p>
 
-<p>Next, we'll need to know how much you will pay in monthly rent (not including utilities):</p>
+      <div class="questions">
+        <div>
+          <label>First, tell us the total amount of your combined teacher salaries</label>
+          {{input value=salaries placeholder="$"}}
+        </div>
 
-{{input value=rent}}
+        <div>
+          <label>Next, we'll need to know how much you will pay in monthly rent (not including utilities)</label>
+          {{input value=rent placeholder="$"}}
+        </div>
+        <div>
+          <button class="btn btn-primary" {{action "create"}}>Create Spreadsheet</button>
+        </div>
+      </div>
+    </div>
 
-<button {{action "create"}}>Create Spreadsheet</button>
+  </div>
+</main>
+
+<footer>
+  <p class="text-center text-muted small">Copyight © 2015 Wildflower. <u><a href="#" class="text-muted">About your privacy</a></u></p>
+</footer>
