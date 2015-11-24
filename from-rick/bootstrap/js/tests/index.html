@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- jQuery -->
-    <script src="vendor/jquery.min-852516371a92bb96471fef0ede6cb1f0.js" integrity="sha256-fU+0bwOzypEVGbOYD1SvqTmrITyT2+pJ8P82h5xzTSo= sha512-lZjLsaZkKLUVZpBUAFbAoLH/TGWPEsct8hfCU3Y3YQniG9LhzGDmJe8l8MnFQhk9sLE8RWzmFCX7NunMxOh6xg==" ></script>
+    <script src="vendor/jquery.min.js"></script>
     <script>
       // Disable jQuery event aliases to ensure we don't accidentally use any of them
       (function () {
@@ -49,8 +49,8 @@
     </script>
 
     <!-- QUnit -->
-    <link rel="stylesheet" href="vendor/qunit-b378210e6c6182e467c6177e820a0824.css" media="screen" integrity="sha256-fKJaXBe3emOSa6+7sok+ukvZ6PATg/ZA16iXhMQ8GcI= sha512-/Pf4SmnKtoHsbt6H83lnCbh/eeqxJXMpAXuGF/pZm/eRztJ7NNRqkMMew24WBIXFdKh+CPZV/Aq++uu/a12p3A==" >
-    <script src="vendor/qunit-9d5176087d293ca9b67f7cd260bacaa3.js"></script>
+    <link rel="stylesheet" href="vendor/qunit.css" media="screen">
+    <script src="vendor/qunit.js"></script>
     <script>
       // See https://github.com/axemclion/grunt-saucelabs#test-result-details-with-qunit
       var log = []
@@ -144,17 +144,17 @@
     <script src="../../js/affix.js"></script>
 
     <!-- Unit tests -->
-    <script src="unit/alert-80be65cb22014242dbed1577d3e65c74.js"></script>
-    <script src="unit/button-074b69a70c107b8707fc84d7c6d6800a.js" integrity="sha256-p6M3/vx6GhpV8VSkzfVwhfdZeCoD3WMTRQDvEJnPXEI= sha512-D+TCQrbWtUz7NcyyqG3Fx9pzaAJu0SwxNERZrfwyiJkIpSRxnY+7dRGN/bp3liJGUj6nOdxdbO7QFOErrAl30g==" ></script>
-    <script src="unit/carousel-ca2c5a7334b707d2c9f54fc9a0a8c02e.js" integrity="sha256-6WE8yorh7up72tth2rFdbMlGYQmf73dVpDA8jMrxpRc= sha512-rI7vzbI3tzNdMY/BrPyZ5bxMUJOjb6fy3n1ecIkHNQVmO2obRhNMumVd5QfiFKM9deWZV56gkN5VIpHxzIPm7g==" ></script>
-    <script src="unit/collapse-9e4a4b3f1569a16810dd33146334ac8e.js" integrity="sha256-ayNCr5d9LR2O8jpgwutDSGSRxTBXQPvt0E5HnPuk0eE= sha512-6yJI1pmtDswp4+mrye4/b3jdhd+yguQuZN8jsZclITVAAIGIK6mmgkFSiChAnY7fVbt6ZKkgUclBpkCyfoFkzw==" ></script>
-    <script src="unit/dropdown-1a185190bd78a4ed4cdded37c8d24969.js" integrity="sha256-/RmvxywzA98MInaubl0Z5Lv4w9wExPuS25N6qnVKOcw= sha512-jv8eP28VEBXu6EGRexhiEv8vXQ8vhQLgr23sLYWrrI1oOOZwHIhxS1arTaSKBCJuKUnT0AaiDKwB3hpM0hW3Ow==" ></script>
-    <script src="unit/modal-67203159740b5c5a100baba017f2c2a6.js" integrity="sha256-LQe/fW5NUIHhC4dpZvzAKdH+ECl6OkcUqnsuZLbmelg= sha512-3x7W5iR/qa1v2jFVWd1Q6olmNRJyxzwqViFHUOINxxNIXP6Ieqr+28Q3f2pvgsQFgvI/bTX1+AA1rVMchhI3ag==" ></script>
-    <script src="unit/scrollspy-4f9d80daaec741abe5b8986efc5adad8.js" integrity="sha256-ggXXlsNW1eze1UpfYVrqlbq7n54aug7aVId9dz1mG3w= sha512-7fJB6dP4xXMfISGTwsMIOI2DnQ9H1JvYUl0vuJVsh4ZnYRGn7B5paxaMhUksra4BsqVhDHZehD0VPKpQfzAhCg==" ></script>
-    <script src="unit/tab-9cb55f699fda2b8ffbb9c3841bb4b4ea.js" integrity="sha256-E0/QFBjb75ZRvOhOizIAhZMjal3Ha7U3mpLX+1JMCx4= sha512-9KiJ8sCKGRTKI498YSrkrK7tWwi+o99p05U0MwxmpL/bncx4kGcSrUcTlVQyF24btwpreGGN5fLsqtxOIkDTjw==" ></script>
-    <script src="unit/tooltip-df5fb787c0647eda7f5e39c516226a67.js" integrity="sha256-LQY91mjAS2i6lB/snR5IJwOlHsCwEOUlhVVj+aixYhE= sha512-or0XwLD59lL0Rc9IvqUgSmZtnQbSvQmruhwM9pVw7Afy0GFgOcYqossdjSdZJr+knKxmyEUkjbEL8Kv2zBWUUA==" ></script>
-    <script src="unit/popover-094cd242af27509962c88b4c3eea2d86.js"></script>
-    <script src="unit/affix-44975ea0b5e8cd76107b8be3117e0d29.js" integrity="sha256-9yoLHNFXMac7t44/RdRyhLrHUchtTTLcCjm9wf5l0x0= sha512-LeKHZa8js/aWP0swx0c+LrR3j26XvV1XHbn/vZK16UKn4GvHJlJxy2FdyQpYwmlD0yzpmFIuOQJV8DoRUNneCQ==" ></script>
+    <script src="unit/alert.js"></script>
+    <script src="unit/button.js"></script>
+    <script src="unit/carousel.js"></script>
+    <script src="unit/collapse.js"></script>
+    <script src="unit/dropdown.js"></script>
+    <script src="unit/modal.js"></script>
+    <script src="unit/scrollspy.js"></script>
+    <script src="unit/tab.js"></script>
+    <script src="unit/tooltip.js"></script>
+    <script src="unit/popover.js"></script>
+    <script src="unit/affix.js"></script>
 
   </head>
   <body>
