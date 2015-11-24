@@ -1,9 +1,9 @@
 export const budgetConfig = [
   {
-    onSheet: 'START UP COST',
+    onSheet: 'INPUT ASSUMPTIONS',
     do: [
-      { put: 'salaries' , into: 'B7' },
-      { put: 'rent' , into: 'B11' }
+      { put: 'salaries' , into: 'B2' },
+      { put: 'rent' , into: 'B3' }
     ]
   }
 ];
