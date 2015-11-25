@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+/* mixins  ---------- */
+// css3 grad parametric mixin,  thanks to:
+// http://blackbe.lt/leveraging-less-color-functions-for-better-css3-gradient-fallbacks-in-ie/
+@mixin background-gradient($start, $stop, $stop-pos) {
+    background: mix($start, $stop, 50%);
+    background: -webkit-gradient(linear, left, from($start), to($stop) $stop-pos);
+    background: -webkit-linear-gradient(left, $start, $stop $stop-pos);
+    background:    -moz-linear-gradient(right, $start, $stop $stop-pos);
+    background:      -o-linear-gradient(right, $start, $stop $stop-pos);
+    background:         linear-gradient(to right, $start, $stop $stop-pos);
+}
+
+/* html  ---------- */
+html {
+        position: relative;
+        min-height: 100%;
+}
+body {
+        margin-bottom: 48px; /* height of footer */
+}
+
+/* general  ---------- */
+div.block {
+    margin-bottom: $padding-large-horizontal;
+}
+div.inline {
+        display: inline-block;
+}
+
+/* buttons  ---------- */
+.btn {
+  font-family: $forms-btt-font-family;
+}
+@media screen and (max-width:320px){
+        .bootstrap-select {
+                .btn,
+                .dropdown-menu {
+                        max-width: 300px;
+                }
+        }
+}
+@media screen and (max-width:375px){
+        .bootstrap-select {
+                .btn,
+                .dropdown-menu {
+                        max-width: 355px;
+                        white-space: normal;
+                }
+        }
+}
+
+/* dropdown  ---------- */
+main .dropdown-toggle {
+        background-color: $brand-tertiary-light;
+        border-color: mix(#fff, $brand-primary, 35%);
+        border-width: 2px;
+        .caret {
+                color: darken($btn-primary-bg, 25%);
+                border-top-width:   ($caret-width-base * 4);
+                border-right-width:   ($caret-width-base * 2);
+                border-left-width:   ($caret-width-base * 2);
+                border-bottom-width:   ($caret-width-base * 4);
+                top: 33% !important;
+        }
+}
+.navbar {
+        .dropdown-toggle {
+                background-color: transparent;
+        }
+}
+.dropdown-menu {
+    font-family: $forms-btt-font-family;
+}
+
+/* forms  ---------- */
+.form-control {
+  font-family: $forms-btt-font-family;
+  font-weight: $input-weight;
+  @include box-shadow(inset 0 0 1px rgba(0,0,0,.5));
+}
+.form-wide {
+        button,
+        ul {
+                width: 100%;
+        }
+}
+label {
+    font-family: $forms-btt-font-family;
+    font-weight: $input-weight;
+        font-weight: normal;
+}
+
+/* select */
+.form-group,
+.select-group {
+        margin-bottom: 2em;
+        p {
+                margin-bottom: ($line-height-computed / 4);
+        }
+}
+.bootstrap-select {
+  // The selectpicker button
+  > .dropdown-toggle {
+    padding-right: ($caret-width-base * 8);
+  }
+}
+
+/* labels  ---------- */
+.label {
+  font-family: $forms-btt-font-family;
+}
+
+/* navbar, navs  ---------- */
+.navbar,
+.navbar-default,
+.nav {
+  font-family: $forms-btt-font-family;
+  font-weight: $input-weight;
+}
+.navbar.theme {
+        margin-bottom: 0;
+}
+.theme  {
+        .navbar-header {
+        }
+        .navbar-brand {
+                font-family: $font-family-serif;
+                font-size: $font-size-h2;
+                font-weight: normal;
+                letter-spacing: .04em;
+                text-transform: lowercase;
+                line-height: 1;
+                margin: 0;
+                padding-left: 95px;
+                background:url(../images/wildflowerFoundationLogo_noText.png) no-repeat 0 0;
+                background-position: 10px 3px;
+                background-size: 75px auto;
+        }
+}
+
+/* tab menu */
+.nav-tabs a {
+        color: $gray-dark;
+        em {
+                font-style: normal;
+                color: $gray-mid;
+        }
+}
+.nav-tabs.nav-justified > li > a {
+        text-align: left;
+}
+.nav-tabs.has-gradient {
+        > li {
+                > a {
+                        @include background-gradient(#e8eaea,#f6f6f6,50%);
+                &:hover,
+                &:focus {
+                  background: $nav-tabs-active-link-hover-bg;
+                }
+                }
+                &.active > a {
+                        &,
+                        &:hover,
+                        &:focus {
+                                background: $nav-tabs-active-link-hover-bg !important;
+                                background-color: $nav-tabs-active-link-hover-bg !important;
+                        }
+                }
+        }
+}
+.nav-tabs.no-border {
+        > li {
+                > a {
+                        border: none;
+                        border-bottom: solid  1px #fff;
+                }
+        }
+        > .active > a {
+                &,
+                &:hover,
+                &:focus {
+                        border: none;
+                }
+        }
+}
+
+/* pager  ---------- */
+.pager {
+  font-family: $forms-btt-font-family;
+  font-weight: $input-weight;
+}
+
+/* tables  ---------- */
+table {
+        &.highlight {
+                 td {
+                        background-color: $brand-tertiary-light;
+                }
+        }
+        &.table-teachers {
+          // Cells
+          > thead,
+          > tbody,
+          > tfoot {
+            > tr {
+              > th,
+              > td {
+                border-color: #fff;
+                        padding-top: $table-cell-padding * 2;
+              }
+            }
+          }
+        }
+}
+.table-teachers {
+        p {
+                margin-bottom: ($line-height-computed / 4);
+        }
+        ul,
+        & li {
+                list-style-type: none;
+        }
+        .glyphicon-ok {
+                font-size:1.5em;
+                margin: .25em 0 0 16px;
+                color: $brand-primary;
+        }
+        a.detail-link {
+                display:block;
+                margin-top:.75em;
+        }
+}
+
+/* typography  ---------- */
+header.sub-header {
+        background-color: $brand-primary;
+        color: $navbar-inverse-color;
+        margin-bottom: 1px;
+        h1 {
+                font-size: 1.25em;
+                font-family: $font-family-alt;
+                margin: 1.25em 0 .75em;
+                padding: .25em 0 0 45px;
+                text-transform: lowercase;
+                letter-spacing: .075em;
+                background-image:url(../images/icon_stamp.svg);
+                background-repeat: no-repeat;
+                background-position: 8px 0;
+                background-size: fit;
+        }
+}
+.callout-strong strong {
+        font-size: 1.5em;
+    font-family: $forms-btt-font-family;
+        font-weight: 300;
+        color: $brand-primary;
+        margin: 0 3px;
+}
+.text-light {
+        color: $text-light;
+}
+
+/* page sections ---------- */
+
+main {
+        padding-bottom: 8em;
+}
+
+/* footer */
+footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 48px;
+}
