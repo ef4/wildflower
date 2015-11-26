@@ -1,4 +1,4 @@
-{{#unless haveAnswer}}
+{{#liquid-unless haveAnswer use="fade"}}
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <div class="page-header">
@@ -93,4 +93,4 @@
       <li class="next"><a href="#location" id="tablink-location" data-toggle="tab">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
     </ul>
   </nav>
-{{/unless}}
+{{/liquid-unless}}
