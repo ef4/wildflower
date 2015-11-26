@@ -1,0 +1,13 @@
+<div class="container">
+  <ul class="nav nav-tabs nav-justified has-gradient no-border" role="tablist">
+    {{#each steps as |step index|}}
+    <li>
+      {{#link-to (concat "licensing." step)}}
+        <em>{{add index 1}}</em> {{step-title step}}
+      {{/link-to}}
+    </li>
+    {{/each}}
+  </ul>
+
+  <div>{{liquid-outlet class="licensing-step-outlet"}}</div>
+</div>

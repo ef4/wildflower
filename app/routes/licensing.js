@@ -4,10 +4,7 @@ export default Ember.Route.extend({
   subHeader: Ember.inject.service(),
 
   beforeModel() {
-    this.get('subHeader').set('title', 'Budget');
-  },
-
-  model() {
-    return this.store.findRecord('budget', 'template');
+    this.get('subHeader').set('title', 'Licensing');
   }
+
 });

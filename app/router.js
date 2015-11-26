@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import config from './config/environment';
+import { steps } from './components/licensing-steps/component';
 
 const Router = Ember.Router.extend({
   location: config.locationType
@@ -8,11 +9,13 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('budget');
   this.route('licensing', function() {
-    this.route('setup', { path: '/' });
-    this.route('teachers');
-    this.route('location');
-    this.route('inspectors');
-    this.route('forms');
+    steps.forEach((step, index) => {
+      if (index === 0) {
+        this.route(step, { path: '/' });
+      } else {
+        this.route(step);
+      }
+    });
   });
 });
 

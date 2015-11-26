@@ -238,6 +238,7 @@ header.sub-header {
         background-color: $brand-primary;
         color: $navbar-inverse-color;
         margin-bottom: 1px;
+        transition: background-color 500ms ease;
         h1 {
                 font-size: 1.25em;
                 font-family: $font-family-alt;
