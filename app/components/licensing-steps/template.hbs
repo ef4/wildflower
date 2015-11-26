@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs nav-justified has-gradient no-border" role="tablist">
     {{#each steps as |step index|}}
     <li>
-      {{#link-to (concat "licensing." step)}}
+      {{#link-to (concat "licensing." step) disabled=(step-locked step)}}
         <em>{{add index 1}}</em> {{step-title step}}
       {{/link-to}}
     </li>

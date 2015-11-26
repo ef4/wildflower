@@ -1,0 +1,8 @@
+{{#power-select options=states
+                selected=state
+                matcher=byNamePrefix
+                onchange=onchange
+                placeholder="Choose a state..."
+                as |stateOption|}}
+  {{stateOption.name}}
+{{/power-select}}
