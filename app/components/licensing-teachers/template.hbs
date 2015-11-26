@@ -1,0 +1,96 @@
+{{#unless haveAnswer}}
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="page-header">
+        <p><strong>Next, let’s make sure you have the right teachers for your school.</strong></p>
+      </div>
+      <form>
+        <div class="select-group">
+          <label for="selectAgeRange">Your students’ age range:</label>
+          <p class="text-light">All Wildflower schools are mixed ages.</p>
+          {{student-age-range-selector ageRange=ageRange onchange=(action (mut ageRange))}}
+        </div>
+        <div class="select-group">
+          <label for="selectClassSize">Number of students:</label>
+          <p class="text-light">Wildflower recommends classes of 15-20 students.</p>
+          {{class-size-selector classSize=classSize onchange=(action (mut classSize))}}
+        </div>
+      </form>
+    </div>
+  </div>
+  <nav>
+    <ul class="pager">
+      <li class="previous"><a href="#setup" id="tablink-setup" data-toggle="tab"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back</a></li>
+      <li class="next"><a href="#subtab-teachers2" id="tablink-teachers2">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+    </ul>
+  </nav>
+{{else}}
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="callout-strong">
+        <div class="page-header">
+          <div class="block">
+            {{#liquid-unless editingNumberOfStudents}}
+              <div id="students-number-field">
+                With a maximum of <strong>9 students </strong>
+                <button {{action (action (mut editingNumberOfStudents) true)}} class="btn btn-default btn-xs btn-edit">change</button>
+              </div>
+            {{else}}
+              <div id="students-number-select" class="inline">
+                {{class-size-selector classSize=classSize onchange=(action (mut classSize))}}
+                <button {{action (action (mut editingNumberOfStudents) false)}} class="btn btn-default btn-xs btn-edit">apply</button>
+              </div>
+            {{/liquid-unless}}
+          </div>
+          <div class="block">
+            {{#liquid-unless editingStudentAgeRange}}
+              <div id="students-age-field">
+                Who are between the ages of <strong>15 months and 4 1/2 years</strong>
+                <button {{action (action (mut editingStudentAgeRange) true)}} class="btn btn-default btn-xs btn-edit">change</button>
+              </div>
+            {{else}}
+              <div id="students-age-select" class="inline">
+                {{student-age-range-selector ageRange=ageRange onchange=(action (mut ageRange))}}
+                <button {{action (action (mut editingStudentAgeRange) false)}} class="btn btn-default btn-xs btn-edit">apply</button>
+              </div>
+            {{/liquid-unless}}
+          </div>
+        </div>
+        <h3>You’ll need:</h3>
+        <div class="table-responsive">
+          <table class="table table-teachers highlight">
+            <tbody>
+              <tr>
+                <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><p>at least <strong>2 teachers</strong></p>
+                <ul>
+                  <li>1 who is an Infant/Toddler trained teacher</li>
+                  <li>1 who is a Preschool trained teacher</li>
+                </ul></td>
+                <td><a class="detail-link" href="#">See full regulation</a></td>
+              </tr>
+              <tr>
+                <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><p>at least <strong>1 administrator</strong></p>
+                <ul>
+                  <li>who is a family child care provider or
+                    teacher/site coordinator</li>
+                </ul></td>
+                <td><a class="detail-link" href="#">See full regulation</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>We’ll email you the information on this page, but you can also
+          <button type="button" class="btn btn-default btn-xs">print this page</button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <ul class="pager">
+      <li class="previous"><a href="#subtab-teachers1" id="tablink-teachers1"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back</a></li>
+      <li class="next"><a href="#location" id="tablink-location" data-toggle="tab">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+    </ul>
+  </nav>
+{{/unless}}
