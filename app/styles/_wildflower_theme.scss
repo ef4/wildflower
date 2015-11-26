@@ -160,7 +160,7 @@ label {
                   background: $nav-tabs-active-link-hover-bg;
                 }
                 }
-                &.active > a {
+                > a.active {
                         &,
                         &:hover,
                         &:focus {

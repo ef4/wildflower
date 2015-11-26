@@ -1,13 +1,12 @@
 <div class="container">
-  <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified has-gradient no-border" role="tablist">
-    <li role="presentation" class="active"><a href="#setup" aria-controls="setup" role="tab" data-toggle="tab"><em>1</em> Set-Up</a></li>
-    <li role="presentation"><a href="#teachers" aria-controls="teachers" role="tab" data-toggle="tab"><em>2</em> Teachers</a></li>
-    <li role="presentation"><a href="#location" aria-controls="location" role="tab" data-toggle="tab"><em>3</em> Location</a></li>
-    <li role="presentation"><a href="#inspectors" aria-controls="inspectors" role="tab" data-toggle="tab"><em>4</em> Inspectors</a></li>
-    <li role="presentation"><a href="#forms" aria-controls="forms" role="tab" data-toggle="tab"><em>5</em> Forms</a></li>
+    <li>{{#link-to "licensing.setup"}}<em>1</em> Set-Up{{/link-to}}</li>
+    <li>{{#link-to "licensing.teachers"}}<em>2</em> Teachers{{/link-to}}</li>
+    <li>{{#link-to "licensing.location"}}<em>3</em> Location{{/link-to}}</li>
+    <li>{{#link-to "licensing.inspectors"}}<em>4</em> Inspectors{{/link-to}}</li>
+    <li>{{#link-to "licensing.forms"}}<em>5</em> Forms{{/link-to}}</li>
   </ul>
-  <!-- tab content -->
+
   <div class="tab-content">
     <!-- Tab: Set-up *************************************************** -->
     <div role="tabpanel" class="tab-pane fade in active" id="setup">

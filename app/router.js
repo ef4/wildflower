@@ -7,7 +7,13 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('budget');
-  this.route('licensing');
+  this.route('licensing', function() {
+    this.route('setup', { path: '/' });
+    this.route('teachers');
+    this.route('location');
+    this.route('inspectors');
+    this.route('forms');
+  });
 });
 
 export default Router;
