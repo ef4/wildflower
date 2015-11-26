@@ -1,0 +1,40 @@
+.wf-budget {
+    max-width: 45em;
+    margin-left: auto;
+    margin-right: auto;
+
+    code {
+        font-style: normal;
+        color: rgb(62, 83, 72);
+        background-color: transparent;
+    }
+
+    p {
+        font-style: italic;
+        letter-spacing: 0.1ex;
+        margin-bottom: 24px;
+    }
+
+    .questions > div {
+        margin-right: 3.5em;
+        margin-left: 3.5em;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+
+        label {
+            flex: 1;
+            font-weight: normal;
+            &:after {
+                content: ":";
+            }
+        }
+        input {
+            text-align: right;
+            font-family: sans;
+            font-size: 1.2em;
+            max-width: 7em;
+        }
+    }
+}

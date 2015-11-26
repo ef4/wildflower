@@ -2,7 +2,6 @@
   <div class="container">
     <div class="navbar-header"> <a class="navbar-brand" href="#">Wildflower</a> </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Home</a></li>
@@ -17,21 +16,15 @@
         </li>
       </ul>
     </div>
-    <!-- /.navbar-collapse -->
-
   </div>
 </nav>
-<header class="sub-header">
+<header class="sub-header {{currentRouteName}}">
   <div class="container">
     <h1>Licensing</h1>
   </div>
 </header>
 
 <main>{{outlet}}</main>
-
-<footer>
-  <p class="text-center text-muted small">Copyight © 2015 Wildflower. <u><a href="#" class="text-muted">About your privacy</a></u></p>
-</footer>
 
 <footer>
   <div class="container">

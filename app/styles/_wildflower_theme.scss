@@ -251,6 +251,11 @@ header.sub-header {
                 background-size: fit;
         }
 }
+
+header.sub-header.budget {
+    background-color: $flower-purple;
+}
+
 .callout-strong strong {
         font-size: 1.5em;
     font-family: $forms-btt-font-family;
@@ -265,7 +270,7 @@ header.sub-header {
 /* page sections ---------- */
 
 main {
-        padding-bottom: 8em;
+        padding-bottom: 2em;
 }
 
 /* footer */
