@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  haveAnswer: Ember.computed('ageRange', 'classSize', function() {
-    return this.get('ageRange') && this.get('classSize');
+  haveAnswer: Ember.computed('model.ageRange', 'model.classSize', function() {
+    return this.get('model.ageRange') && this.get('model.classSize');
   })
 });

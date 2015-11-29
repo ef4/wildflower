@@ -10,10 +10,10 @@
   <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center">
     <p class="text-greeting"> <strong>First, tell us where you want to open your school so we can pull up the right information.</strong></p>
 
-    {{state-selector state=state onchange=(action (mut state))}}
+    {{state-selector state=model.state onchange=(action (mut model.state))}}
 
-    {{#liquid-if state use="fade"}}
-      {{#link-to (next-step-after "setup") class="btn btn-default"}}Continue{{/link-to}}
+    {{#liquid-if model.state use="fade"}}
+      <a onclick={{action changeStep 1}} class="btn btn-default">Continue</a>
     {{/liquid-if}}
 
   </div>

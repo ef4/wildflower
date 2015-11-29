@@ -8,22 +8,17 @@
         <div class="select-group">
           <label for="selectAgeRange">Your students’ age range:</label>
           <p class="text-light">All Wildflower schools are mixed ages.</p>
-          {{student-age-range-selector ageRange=ageRange onchange=(action (mut ageRange))}}
+          {{student-age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange))}}
         </div>
         <div class="select-group">
           <label for="selectClassSize">Number of students:</label>
           <p class="text-light">Wildflower recommends classes of 15-20 students.</p>
-          {{class-size-selector classSize=classSize onchange=(action (mut classSize))}}
+          {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize))}}
         </div>
       </form>
     </div>
   </div>
-  <nav>
-    <ul class="pager">
-      <li class="previous"><a href="#setup" id="tablink-setup" data-toggle="tab"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back</a></li>
-      <li class="next"><a href="#subtab-teachers2" id="tablink-teachers2">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
-    </ul>
-  </nav>
+  {{licensing-pager changeStep=changeStep}}
 {{else}}
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -37,7 +32,7 @@
               </div>
             {{else}}
               <div id="students-number-select" class="inline">
-                {{class-size-selector classSize=classSize onchange=(action (mut classSize))}}
+                {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize))}}
                 <button {{action (action (mut editingNumberOfStudents) false)}} class="btn btn-default btn-xs btn-edit">apply</button>
               </div>
             {{/liquid-unless}}
@@ -50,7 +45,7 @@
               </div>
             {{else}}
               <div id="students-age-select" class="inline">
-                {{student-age-range-selector ageRange=ageRange onchange=(action (mut ageRange))}}
+                {{student-age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange))}}
                 <button {{action (action (mut editingStudentAgeRange) false)}} class="btn btn-default btn-xs btn-edit">apply</button>
               </div>
             {{/liquid-unless}}
@@ -87,10 +82,5 @@
       </div>
     </div>
   </div>
-  <nav>
-    <ul class="pager">
-      <li class="previous"><a href="#subtab-teachers1" id="tablink-teachers1"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back</a></li>
-      <li class="next"><a href="#location" id="tablink-location" data-toggle="tab">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
-    </ul>
-  </nav>
+  {{licensing-pager changeStep=changeStep}}
 {{/liquid-unless}}
