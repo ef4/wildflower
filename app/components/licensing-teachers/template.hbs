@@ -27,7 +27,7 @@
           <div class="block">
             {{#liquid-unless editingNumberOfStudents}}
               <div id="students-number-field">
-                With a maximum of <strong>9 students </strong>
+                With a maximum of <strong>{{model.classSize}} students</strong>
                 <button {{action (action (mut editingNumberOfStudents) true)}} class="btn btn-default btn-xs btn-edit">change</button>
               </div>
             {{else}}
@@ -40,7 +40,7 @@
           <div class="block">
             {{#liquid-unless editingStudentAgeRange}}
               <div id="students-age-field">
-                Who are between the ages of <strong>15 months and 4 1/2 years</strong>
+                Who are between the ages of <strong>{{model.ageRange}}</strong>
                 <button {{action (action (mut editingStudentAgeRange) true)}} class="btn btn-default btn-xs btn-edit">change</button>
               </div>
             {{else}}
