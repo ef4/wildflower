@@ -43,6 +43,7 @@
     "ember-localstorage-adapter": "0.5.5",
     "ember-power-select": "0.5.2",
     "ember-sass-bootstrap": "0.1.0",
+    "ember-tether": "0.2.0",
     "liquid-fire": "0.21.3"
   }
 }

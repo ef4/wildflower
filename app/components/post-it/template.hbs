@@ -1,0 +1,8 @@
+{{#if active}}
+  {{#ember-tether target=target targetAttachment=targetAttachment attachment=attachment}}
+    <div class="post-it">
+      <span onclick={{action (mut active) false}} class="glyphicon glyphicon-remove"></span>
+      {{yield}}
+    </div>
+  {{/ember-tether}}
+{{/if}}

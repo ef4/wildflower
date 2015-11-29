@@ -76,9 +76,16 @@
             </tbody>
           </table>
         </div>
-        <p>We’ll email you the information on this page, but you can also
+
+        <p id="will-email">We’ll email you the information on this page, but you can also
           <button type="button" class="btn btn-default btn-xs">print this page</button>
         </p>
+        {{#post-it target="#will-email"}}
+          It feels bad to tell people to print their work here, when
+          we're on step 2 of 5. They should have confidence that they
+          can move forward and they won't lose anything.
+        {{/post-it}}
+
       </div>
     </div>
   </div>

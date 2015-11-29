@@ -16,5 +16,15 @@
       <a onclick={{action changeStep 1}} class="btn btn-default">Continue</a>
     {{/liquid-if}}
 
+    {{#post-it target=".ember-power-select" targetAttachment="top right" attachment="top left"}}
+      <p>
+        We're using browser local storage, so if you return to this page
+        at any time, you will still see your previous entries.
+      </p>
+      <p>
+        Consider adding UI to allow users to "Start From Scratch".
+      </p>
+    {{/post-it}}
+
   </div>
 </div>
