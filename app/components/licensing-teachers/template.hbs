@@ -1,8 +1,7 @@
 <div class="row licensing-teachers">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-    {{#liquid-unless haveAnswer use="fade"}}
-
+    {{#liquid-unless filledIn use="fade"}}
       <div class="page-header">
         <p><strong>Next, let’s make sure you have the right teachers for your school.</strong></p>
       </div>
@@ -18,7 +17,6 @@
           {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize))}}
         </div>
       </form>
-
     {{else}}
       <div class="page-header teachers-edit">
         <div class="block">
@@ -29,30 +27,32 @@
         </div>
       </div>
       <h3>You’ll need:</h3>
-      <div class="table-responsive">
-        <table class="table table-teachers highlight">
-          <tbody>
-            <tr>
-              <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-              <td><p>at least <strong>2 teachers</strong></p>
-              <ul>
-                <li>1 who is an Infant/Toddler trained teacher</li>
-                <li>1 who is a Preschool trained teacher</li>
-              </ul></td>
-              <td><a class="detail-link" href="#">See full regulation</a></td>
-            </tr>
-            <tr>
-              <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-              <td><p>at least <strong>1 administrator</strong></p>
-              <ul>
-                <li>who is a family child care provider or
-                  teacher/site coordinator</li>
-              </ul></td>
-              <td><a class="detail-link" href="#">See full regulation</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      {{#liquid-bind answer use="fade" as |currentAnswer|}}
+        <div class="table-responsive">
+          <table class="table table-teachers highlight">
+            <tbody>
+              <tr>
+                <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><p>at least <strong>2 teachers</strong></p>
+                <ul>
+                  <li>1 who is an Infant/Toddler trained teacher</li>
+                  <li>1 who is a Preschool trained teacher</li>
+                </ul></td>
+                <td><a class="detail-link" href="#">See full regulation</a></td>
+              </tr>
+              <tr>
+                <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><p>at least <strong>1 administrator</strong></p>
+                <ul>
+                  <li>who is a family child care provider or
+                    teacher/site coordinator</li>
+                </ul></td>
+                <td><a class="detail-link" href="#">See full regulation</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      {{/liquid-bind}}
 
       <p id="will-email">We’ll email you the information on this page, but you can also
         <button {{action "print"}} type="button" class="btn btn-default btn-xs">print this page</button>
@@ -62,6 +62,7 @@
       we're on step 2 of 5. They should have confidence that they
       can move forward and they won't lose anything.
       {{/post-it}}
+
 
     {{/liquid-unless}}
   </div>
