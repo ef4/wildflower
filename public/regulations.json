@@ -1,0 +1,105 @@
+{
+  "data": [
+    {
+      "type": "regulation",
+      "id": "Massachusetts",
+      "attributes": {
+        "ratios": [
+          {
+            "ageGroups": ["Infant", "Toddler"],
+            "maxGroupSize": 9,
+            "notes": "No more than three infants.",
+            "childrenPerEducator": 3,
+            "qualifications": [
+              [1, "Infant/Toddler Teacher"]
+            ],
+            "reference": "606 CMR 7.10(9)(c)1",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "ageGroups": ["Toddler", "Preschool Child"],
+            "maxGroupSize": 9,
+            "childrenPerEducator": 5,
+            "qualifications": [
+              [1, "Infant/Toddler Teacher"],
+              [1, "Preschool Teacher"]
+            ],
+            "reference": "606 CMR 7.10(9)(c)2",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "ageGroups": ["Preschool Child", "School Age Child"],
+            "maxGroupSize": 20,
+            "notes": "Maximum age is eight",
+            "childrenPerEducator": 10,
+            "qualifications": [
+              [1, "Preschool Teacher"]
+            ],
+            "reference": "606 CMR 7.10(9)(c)3",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "ageGroups": ["Kindergarten Child", "School Age Child"],
+            "maxGroupSize": 26,
+            "notes": "Maximum age is eight",
+            "childrenPerEducator": 13,
+            "qualifications": [
+              [1, "Group Leader"]
+            ],
+            "reference": "606 CMR 7.10(9)(c)4",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          }
+        ],
+        "ageGroups": [
+          {
+            "name": "Infant",
+            "definition": "A child who is younger than 15 months old.",
+            "reference": "606 CMR 7.02",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "Toddler",
+            "definition": "A child who is at least 15 months of age, but younger than 33 months old.",
+            "reference": "606 CMR 7.02",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "Preschool Child",
+            "definition": "Any child at least two years and nine months old but not yet attending first grade.",
+            "reference": "606 CMR 7.02",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "Kindergarten Child",
+            "definition": "A child who is five years old or who will attend first grade the following year in a public or private school.",
+            "reference": "606 CMR 7.02",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "School Age Child",
+            "definition": "A kindergarten child, or a child who is attending a public or approved private elementary school.",
+            "reference": "606 CMR 7.02",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          }
+        ],
+        "qualifications": [
+          {
+            "name": "Infant/Toddler Teacher",
+            "reference": "606 CMR 7.09(18)(c)2",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "Preschool Teacher",
+            "reference": "606 CMR 7.09(18)(c)2",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "Group Leader",
+            "reference": "606 CMR 7.09(19)(a)2",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          }
+        ]
+      }
+    }
+  ]
+}

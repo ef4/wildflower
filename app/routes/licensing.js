@@ -5,6 +5,10 @@ export default Ember.Route.extend({
 
   beforeModel() {
     this.get('subHeader').set('title', 'Licensing');
+  },
+
+  model() {
+    return this.store.findAll('regulation');
   }
 
 });

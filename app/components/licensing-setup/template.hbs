@@ -12,9 +12,14 @@
 
     {{state-selector state=model.state onchange=(action (mut model.state))}}
 
-    {{#liquid-if model.state use="fade"}}
-      <a onclick={{action changeStep 1}} class="btn btn-default">Continue</a>
-    {{/liquid-if}}
+    {{#liquid-bind (obj state=model.state regs=model.stateRegulation) use="fade" as |current|}}
+      {{#if current.regs}}
+        <a onclick={{action changeStep 1}} class="btn btn-default">Continue</a>
+      {{else if current.state}}
+        <div class="alert alert-warning" role="alert">We don't have regulations for this state yet. Please <a href="http://wildflowerschools.org/contact">get in touch</a> so we can work together to add them.</div>
+      {{else}}
+      {{/if}}
+    {{/liquid-bind}}
 
     {{#post-it target=".ember-power-select" targetAttachment="top right" attachment="top left"}}
       <p>
