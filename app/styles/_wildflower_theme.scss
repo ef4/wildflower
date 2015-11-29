@@ -214,24 +214,6 @@ table {
           }
         }
 }
-.table-teachers {
-        p {
-                margin-bottom: ($line-height-computed / 4);
-        }
-        ul,
-        & li {
-                list-style-type: none;
-        }
-        .glyphicon-ok {
-                font-size:1.5em;
-                margin: .25em 0 0 16px;
-                color: $brand-primary;
-        }
-        a.detail-link {
-                display:block;
-                margin-top:.75em;
-        }
-}
 
 /* typography  ---------- */
 header.sub-header {
@@ -257,13 +239,6 @@ header.sub-header.budget {
     background-color: $flower-purple;
 }
 
-.callout-strong strong {
-        font-size: 1.5em;
-    font-family: $forms-btt-font-family;
-        font-weight: 300;
-        color: $brand-primary;
-        margin: 0 3px;
-}
 .text-light {
         color: $text-light;
 }

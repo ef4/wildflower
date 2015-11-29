@@ -6,5 +6,6 @@ export default Ember.Component.extend({
     "15 months – 4 1/2 years",
     "5 years – 10 years",
     "11 years – 14 years"
-  ]
+  ],
+  classNames: ['age-range-selector']
 });
