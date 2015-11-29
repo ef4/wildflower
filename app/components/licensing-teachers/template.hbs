@@ -26,12 +26,12 @@
         <div class="page-header">
           <div class="block">
             {{#liquid-unless editingNumberOfStudents}}
-              <div id="students-number-field">
+              <div>
                 With a maximum of <strong>{{model.classSize}} students</strong>
                 <button {{action (action (mut editingNumberOfStudents) true)}} class="btn btn-default btn-xs btn-edit">change</button>
               </div>
             {{else}}
-              <div id="students-number-select" class="inline">
+              <div class="inline">
                 {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize))}}
                 <button {{action (action (mut editingNumberOfStudents) false)}} class="btn btn-default btn-xs btn-edit">apply</button>
               </div>
@@ -39,12 +39,12 @@
           </div>
           <div class="block">
             {{#liquid-unless editingStudentAgeRange}}
-              <div id="students-age-field">
+              <div >
                 Who are between the ages of <strong>{{model.ageRange}}</strong>
                 <button {{action (action (mut editingStudentAgeRange) true)}} class="btn btn-default btn-xs btn-edit">change</button>
               </div>
             {{else}}
-              <div id="students-age-select" class="inline">
+              <div class="inline">
                 {{student-age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange))}}
                 <button {{action (action (mut editingStudentAgeRange) false)}} class="btn btn-default btn-xs btn-edit">apply</button>
               </div>
