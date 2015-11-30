@@ -57,6 +57,56 @@
             "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
           }
         ],
+        "administrators": [
+          {
+            "ageGroups": ["Infant", "Toddler", "Preschool", "Kindergarten", "School Age"],
+            "minStudents": 1,
+            "maxStudents": 10,
+            "nonTeachingPercent": 0,
+            "qualifications": [
+              "Family Child Care Provider",
+              "Teacher",
+              "Site Coordinator"
+            ],
+            "reference": "606 CMR 7. 04(17)(m)9a",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "ageGroups": ["Infant", "Toddler", "Preschool"],
+            "minStudents": 11,
+            "maxStudents": 13,
+            "nonTeachingPercent": 0,
+            "qualifications": [
+              "Lead Teacher"
+            ],
+            "reference": "606 CMR 7. 04(17)(m)9b",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "ageGroups": ["Infant", "Toddler", "Preschool"],
+            "minStudents": 14,
+            "maxStudents": 26,
+            "nonTeachingPercent": 0,
+            "notes": "Director I is required if more than four hours of operation per day",
+            "qualifications": [
+              "Lead Teacher",
+              "Director I"
+            ],
+            "reference": "606 CMR 7. 04(17)(m)9c & d",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "ageGroups": ["Infant", "Toddler", "Preschool", "Kindergarten", "School Age"],
+            "minStudents": 11,
+            "maxStudents": 52,
+            "nonTeachingPercent": 20,
+            "qualifications": [
+              "School Age Administrator"
+            ],
+            "reference": "606 CMR 7. 04(17)(m)9h",
+            "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          }
+        ],
         "age-groups": [
           {
             "name": "Infant",
@@ -104,6 +154,18 @@
             "name": "Group Leader",
             "reference": "606 CMR 7.09(19)(a)2",
             "referenceURL": "http://www.mass.gov/courts/docs/lawlib/600-699cmr/606cmr7.pdf"
+          },
+          {
+            "name": "School Age Administrator"
+          },
+          {
+            "name": "Director I"
+          },
+          {
+            "name": "Family Child Care Provider"
+          },
+          {
+            "name": "Site Coordinator"
           }
         ]
       }

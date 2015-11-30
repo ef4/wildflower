@@ -31,7 +31,7 @@
         </div>
       </div>
       <h3>You’ll need:</h3>
-      {{#liquid-bind (obj range=model.ageRange classSize=model.classSize minTeachers=model.minTeachers) use="fade" as |current|}}
+      {{#liquid-bind (obj range=model.ageRange classSize=model.classSize minTeachers=model.minTeachers admin=model.adminRequirements) use="fade" as |current|}}
         <div class="table-responsive">
           <table class="table table-teachers highlight">
             <tbody>
@@ -48,13 +48,30 @@
                     {{#each current.range.qualifications as |qual|}}
                     <li>
                       {{#if (eq (get qual "0") 1)}}
-                        1 who is {{proper-article-for (get qual "1") }} {{get qual "1"}}
+                        1 who is {{proper-article-for (get qual "1") }} {{get qual "1"}}.
                       {{else}}
-                        {{get qual "0"}} who are {{maybe-pluralize 2 (get qual "1")}}
+                        {{get qual "0"}} who are {{maybe-pluralize 2 (get qual "1")}}.
                       {{/if}}
                     </li>
                     {{/each}}
                   </ul></td>
+                </tr>
+
+
+                <tr>
+                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td><p><strong>1&nbsp;administrator</strong></p>
+                  <ul>
+                    <li>who is a {{conjoin current.admin.qualifications with="or"}}.</li>
+                    <li>
+                      {{#if current.admin.nonTeachingPercent}}
+                        Needs to spend {{current.admin.nonTeachingPercent}}% of time not teaching.
+                      {{else}}
+                        can be a full time teacher.
+                      {{/if}}
+                    </li>
+                  </ul>
+                  </td>
                 </tr>
               {{/if}}
             </tbody>

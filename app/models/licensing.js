@@ -31,6 +31,16 @@ export default DS.Model.extend({
     if (entry) {
       return entry[1];
     }
+  }),
+
+  adminRequirements: Ember.computed('classSize', 'ageRange', function() {
+    let classSize = this.get('classSize');
+    let groups = this.get('ageRange.ageGroups');
+    return this.get('stateRegulation.administrators').find(
+      entry => entry.minStudents <= classSize &&
+        entry.maxStudents >= classSize &&
+        groups.every(name => entry.ageGroups.indexOf(name) !== -1)
+    );
   })
 
 });
