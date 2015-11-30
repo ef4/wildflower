@@ -1,8 +1,8 @@
-{{#power-select options=ranges
+{{#power-select options=choices
                 selected=ageRange
                 onchange=onchange
                 placeholder=placeholder
                 searchEnabled=false
                 as |option|}}
-  {{option}}
+  {{option.description}}
 {{/power-select}}

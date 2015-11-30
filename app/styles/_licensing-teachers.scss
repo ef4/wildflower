@@ -1,14 +1,13 @@
 .licensing-teachers {
     .teachers-edit {
         .class-size-selector {
-            width: 8em;
             display: inline-block;
             margin: 0 0.5em;
         }
         .age-range-selector {
-            width: 14em;
             display: inline-block;
             margin: 0 0.5em;
+            min-width: 20em;
         }
 
     }
@@ -30,10 +29,15 @@
         & li {
             list-style-type: none;
         }
-        .glyphicon-ok {
+        .glyphicon {
             font-size:1.5em;
             margin: .25em 0 0 16px;
+        }
+        .glyphicon-ok {
             color: $brand-primary;
+        }
+        .glyphicon-thumbs-down {
+            color: $brand-danger;
         }
         a.detail-link {
             display:block;

@@ -9,46 +9,54 @@
         <div class="select-group">
           <label for="selectAgeRange">Your students’ age range:</label>
           <p class="text-light">All Wildflower schools are mixed ages.</p>
-          {{age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange))}}
+          {{age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange)) choices=model.stateRegulation.classrooms}}
         </div>
-        <div class="select-group">
-          <label for="selectClassSize">Number of students:</label>
-          <p class="text-light">Wildflower recommends classes of 15-20 students.</p>
-          {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize))}}
-        </div>
+        {{#liquid-bind model.ageRange use="fade" as |range|}}
+          {{#if range}}
+            <div class="select-group">
+              <label for="selectClassSize">Number of students:</label>
+              <p class="text-light">Wildflower recommends classes of 15-20 students.</p>
+              {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize)) choices=(range-breakpoints range) }}
+            </div>
+          {{/if}}
+        {{/liquid-bind}}
       </form>
     {{else}}
       <div class="page-header teachers-edit">
         <div class="block">
-          With a maximum of {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize))}}
+          With a maximum of {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize)) choices=(range-breakpoints model.ageRange) }}
         </div>
         <div class="block">
-          Who are between the ages of {{age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange))}}
+          Who are between the ages of {{age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange)) choices=model.stateRegulation.classrooms}}
         </div>
       </div>
       <h3>You’ll need:</h3>
-      {{#liquid-bind answer use="fade" as |currentAnswer|}}
+      {{#liquid-bind (obj range=model.ageRange classSize=model.classSize minTeachers=model.minTeachers) use="fade" as |current|}}
         <div class="table-responsive">
           <table class="table table-teachers highlight">
             <tbody>
-              <tr>
-                <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                <td><p>at least <strong>2 teachers</strong></p>
-                <ul>
-                  <li>1 who is an Infant/Toddler trained teacher</li>
-                  <li>1 who is a Preschool trained teacher</li>
-                </ul></td>
-                <td><a class="detail-link" href="#">See full regulation</a></td>
-              </tr>
-              <tr>
-                <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                <td><p>at least <strong>1 administrator</strong></p>
-                <ul>
-                  <li>who is a family child care provider or
-                    teacher/site coordinator</li>
-                </ul></td>
-                <td><a class="detail-link" href="#">See full regulation</a></td>
-              </tr>
+              {{#if (gt current.classSize current.range.maxGroupSize)}}
+                <tr>
+                  <td class="text-center"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></td>
+                  <td><p>The maximum class size for this age range is <strong>{{current.range.maxGroupSize}}&nbsp;students</strong></p></td>
+                </tr>
+              {{else}}
+                <tr>
+                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td><p>at least <strong>{{current.minTeachers}}&nbsp;{{maybe-pluralize current.minTeachers "teacher"}}</strong></p>
+                  <ul>
+                    {{#each current.range.qualifications as |qual|}}
+                    <li>
+                      {{#if (eq (get qual "0") 1)}}
+                        1 who is {{proper-article-for (get qual "1") }} {{get qual "1"}}
+                      {{else}}
+                        {{get qual "0"}} who are {{maybe-pluralize 2 (get qual "1")}}
+                      {{/if}}
+                    </li>
+                    {{/each}}
+                  </ul></td>
+                </tr>
+              {{/if}}
             </tbody>
           </table>
         </div>

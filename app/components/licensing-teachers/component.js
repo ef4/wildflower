@@ -12,10 +12,6 @@ export default Ember.Component.extend({
     }
     return filledIn;
   }),
-  answer: Ember.computed('model.ageRange', 'model.classSize', function() {
-    // hard coded for now
-    return {};
-  }),
   actions: {
     print() {
       window.print();
