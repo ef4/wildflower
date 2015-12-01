@@ -49,6 +49,17 @@ export default DS.Model.extend({
 
   recommendedSquareFeet: Ember.computed('classSize', 'ageRange', function() {
     return this.get('classSize') * 70;
+  }),
+
+  completedSteps: Ember.computed('stateRegulation', 'classSize', 'ageRange', function() {
+    let steps = [];
+    if (this.get('stateRegulation')) {
+      steps.push('setup');
+    }
+    if (this.get('classSize') && this.get('ageRange')) {
+      steps.push('teachers');
+    }
+    return steps;
   })
 
 
