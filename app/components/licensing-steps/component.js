@@ -3,7 +3,8 @@ import Ember from 'ember';
 export const steps = [
   'setup',
   'teachers',
-  'location'
+  'location',
+  'finish'
 ];
 
 export function laterStep(newRoute, oldRoute) {

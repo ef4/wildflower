@@ -1,0 +1,17 @@
+<div class="row licensing-finish">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="page-header">
+
+      <p>Nice job, you completed the licensing questionnaire.  If
+        you'd like, we can email your results to you.</p>
+
+        <div class="well form-inline">
+          <div class="form-group">
+            <label for="email">Please email my results to</label> {{input value=email placeholder="you@example.com" elementId="email"}}
+            <button class="btn btn-primary" {{action "sendEmail" email}}>Send Email</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{licensing-pager changeStep=changeStep}}

@@ -58,6 +58,7 @@ export default DS.Model.extend({
     }
     if (this.get('classSize') && this.get('ageRange')) {
       steps.push('teachers');
+      steps.push('location');
     }
     return steps;
   })
