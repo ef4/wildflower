@@ -1,6 +1,10 @@
 <nav>
   <ul class="pager">
-    <li class="previous"><a onclick={{action changeStep -1}}><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back</a></li>
-    <li class="next"><a onclick={{action changeStep 1}}>Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+    {{#unless changeStep.isFirst}}
+      <li class="previous"><a onclick={{action changeStep -1}}><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back</a></li>
+    {{/unless}}
+    {{#unless changeStep.isLast}}
+      <li class="next"><a onclick={{action changeStep 1}}>Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+    {{/unless}}
   </ul>
 </nav>

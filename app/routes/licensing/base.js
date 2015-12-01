@@ -13,13 +13,16 @@ export default Ember.Route.extend({
         // If we don't already have a model, go to first step.
         this.transitionTo('licensing.' + steps[0]);
       } else {
+        let changeStep = (stepSize) => {
+          model.save().then(
+            () =>this.transitionTo(nextRoute(this.routeName, stepSize))
+          );
+        };
+        changeStep.isLast = !nextRoute(this.routeName, 1);
+        changeStep.isFirst = !nextRoute(this.routeName, -1);
         return {
           record: model,
-          changeStep: (stepSize) => {
-            model.save().then(
-              () =>this.transitionTo(nextRoute(this.routeName, stepSize))
-            );
-          }
+          changeStep
         };
       }
     });

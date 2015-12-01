@@ -41,6 +41,15 @@ export default DS.Model.extend({
         entry.maxStudents >= classSize &&
         groups.every(name => entry.ageGroups.indexOf(name) !== -1)
     );
+  }),
+
+  minSquareFeet: Ember.computed('classSize', 'ageRange', function() {
+    return this.get('classSize') * 50;
+  }),
+
+  recommendedSquareFeet: Ember.computed('classSize', 'ageRange', function() {
+    return this.get('classSize') * 70;
   })
+
 
 });

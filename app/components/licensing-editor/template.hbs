@@ -1,0 +1,8 @@
+<div class="page-header licensing-editor">
+  <div class="block">
+    With a maximum of {{class-size-selector classSize=model.classSize onchange=(action (mut model.classSize)) choices=(range-breakpoints model.ageRange) }}
+  </div>
+  <div class="block">
+    Who are between the ages of {{age-range-selector ageRange=model.ageRange onchange=(action (mut model.ageRange)) choices=model.stateRegulation.classrooms}}
+  </div>
+</div>

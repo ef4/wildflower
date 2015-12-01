@@ -205,20 +205,7 @@ table {
                         background-color: $brand-tertiary-light;
                 }
         }
-        &.table-teachers {
-          // Cells
-          > thead,
-          > tbody,
-          > tfoot {
-            > tr {
-              > th,
-              > td {
-                border-color: #fff;
-                        padding-top: $table-cell-padding * 2;
-              }
-            }
-          }
-        }
+
 }
 
 /* typography  ---------- */
