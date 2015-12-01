@@ -3,14 +3,16 @@ import { steps, nextRoute } from 'wildflower/components/licensing-steps/componen
 
 export default Ember.Route.extend({
   model() {
+    let isFirstStep = this.routeName === 'licensing.' + steps[0];
     return this.store.findRecord('licensing', 'mine').catch(() => {
-      if (this.routeName === 'licensing.' + steps[0]) {
+      if (isFirstStep) {
         // On the first step, we will create a new record if one doesn't exit.
         return this.store.createRecord('licensing', { id: 'mine' });
       }
     }).then(model => {
-      if (!model) {
-        // If we don't already have a model, go to first step.
+      if (!model || (!isFirstStep && !model.get('stateRegulation'))) {
+        // If we don't already have a model with chosen state
+        // regulations, go to the first step.
         this.transitionTo('licensing.' + steps[0]);
       } else {
         let changeStep = (stepSize) => {
