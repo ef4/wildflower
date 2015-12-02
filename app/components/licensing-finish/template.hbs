@@ -7,7 +7,7 @@
 
         <div class="well form-inline">
           {{#liquid-if sentEmail use="fade"}}
-            <div class="alert alert-warning" role="alert">This is a demo site, email sending is not available.</div>
+            <div class="alert alert-warning" role="alert">Sorry, this is a demo site, email sending is disabled.</div>
           {{else}}
             <div class="form-group">
               <label for="email">Please email my results to</label> {{input value=email placeholder="you@example.com" elementId="email"}}
@@ -18,7 +18,9 @@
 
         <p>Or you can <button class="btn btn-default" {{action "print"}}>print a summary</button></p>
 
-        <p>Or you can {{#link-to "licensing.setup"}}go back to review or change your information{{/link-to}}.</p>
+        <p>Or you can {{#link-to "licensing.setup" class="btn btn-default"}}go back to review or change your information{{/link-to}}</p>
+
+        <p>Or you can <button class="btn btn-default" {{action "reset"}}>start again from scratch</button></p>
 
     </div>
   </div>
