@@ -218,6 +218,7 @@ header.sub-header {
         margin-bottom: 1px;
         transition: background-color 500ms ease;
         h1 {
+
                 font-size: 1.25em;
                 font-family: $font-family-alt;
                 margin: 1.25em 0 .75em;
@@ -228,6 +229,7 @@ header.sub-header {
                 background-repeat: no-repeat;
                 background-position: 8px 0;
                 background-size: fit;
+                min-height: 1.5em;
         }
 }
 

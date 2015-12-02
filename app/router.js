@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('privacy-policy');
   this.route('budget');
   this.route('licensing', function() {
     steps.forEach((step, index) => {
