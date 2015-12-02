@@ -24,51 +24,9 @@
     {{else}}
       {{licensing-editor model=model}}
       <h3>You’ll need:</h3>
-      {{#liquid-bind (obj range=model.ageRange classSize=model.classSize minTeachers=model.minTeachers admin=model.adminRequirements) use="fade" as |current|}}
+      {{#liquid-bind (obj ageRange=model.ageRange classSize=model.classSize minTeachers=model.minTeachers adminRequirements=model.adminRequirements) use="fade" as |current|}}
         <div class="table-responsive">
-          <table class="table recommendations-table highlight">
-            <tbody>
-              {{#if (gt current.classSize current.range.maxGroupSize)}}
-                <tr>
-                  <td class="text-center"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></td>
-                  <td><p>The maximum class size for this age range is <strong>{{current.range.maxGroupSize}}&nbsp;students</strong></p></td>
-                </tr>
-              {{else}}
-                <tr>
-                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td><p>at least <strong>{{current.minTeachers}}&nbsp;{{maybe-pluralize current.minTeachers "teacher"}}</strong></p>
-                  <ul>
-                    {{#each current.range.qualifications as |qual|}}
-                    <li>
-                      {{#if (eq (get qual "0") 1)}}
-                        1 who is {{proper-article-for (get qual "1") }} {{get qual "1"}}.
-                      {{else}}
-                        {{get qual "0"}} who are {{maybe-pluralize 2 (get qual "1")}}.
-                      {{/if}}
-                    </li>
-                    {{/each}}
-                  </ul></td>
-                </tr>
-
-
-                <tr>
-                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td><p><strong>1&nbsp;administrator</strong></p>
-                  <ul>
-                    <li>who is a {{conjoin current.admin.qualifications with="or"}}.</li>
-                    <li>
-                      {{#if current.admin.nonTeachingPercent}}
-                        Needs to spend {{current.admin.nonTeachingPercent}}% of time not teaching.
-                      {{else}}
-                        can be a full time teacher.
-                      {{/if}}
-                    </li>
-                  </ul>
-                  </td>
-                </tr>
-              {{/if}}
-            </tbody>
-          </table>
+          {{teacher-results results=current}}
         </div>
       {{/liquid-bind}}
 

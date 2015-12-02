@@ -3,15 +3,36 @@
     <div class="page-header">
 
       <p>Nice job, you completed the licensing questionnaire.  If
-        you'd like, we can email your results to you.</p>
+        you'd like, we can email your results to you:</p>
 
         <div class="well form-inline">
-          <div class="form-group">
-            <label for="email">Please email my results to</label> {{input value=email placeholder="you@example.com" elementId="email"}}
-            <button class="btn btn-primary" {{action "sendEmail" email}}>Send Email</button>
-          </div>
-      </div>
+          {{#liquid-if sentEmail use="fade"}}
+            <div class="alert alert-warning" role="alert">This is a demo site, email sending is not available.</div>
+          {{else}}
+            <div class="form-group">
+              <label for="email">Please email my results to</label> {{input value=email placeholder="you@example.com" elementId="email"}}
+              <button class="btn btn-primary" {{action "sendEmail" email}}>Send Email</button>
+            </div>
+          {{/liquid-if}}
+        </div>
+
+        <p>Or you can <button class="btn btn-default" {{action "print"}}>print a summary</button></p>
+
+        <p>Or you can {{#link-to "licensing.setup"}}go back to review or change your information{{/link-to}}.</p>
+
     </div>
   </div>
 </div>
 {{licensing-pager changeStep=changeStep}}
+
+<div class="printable-summary">
+  <h1>Your Wildflower Licensing Info</h1>
+  <div>State: {{model.state.name}}</div>
+  <div>Age Range: {{model.ageRange.description}}</div>
+  <div>Class Size: {{model.classSize}}&nbsp;students</div>
+  <h2>Teachers:</h2>
+  {{teacher-results results=model}}
+  <h2>Location:</h2>
+  {{location-results results=model}}
+
+</div>

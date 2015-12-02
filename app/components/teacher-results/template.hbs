@@ -1,0 +1,43 @@
+<table class="table recommendations-table highlight">
+  <tbody>
+    {{#if (gt results.classSize results.ageRange.maxGroupSize)}}
+    <tr>
+      <td class="text-center"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></td>
+      <td><p>The maximum class size for this age range is <strong>{{results.ageRange.maxGroupSize}}&nbsp;students</strong></p></td>
+    </tr>
+  {{else}}
+    <tr>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+      <td><p>at least <strong>{{results.minTeachers}}&nbsp;{{maybe-pluralize results.minTeachers "teacher"}}</strong></p>
+      <ul>
+        {{#each results.ageRange.qualifications as |qual|}}
+        <li>
+          {{#if (eq (get qual "0") 1)}}
+          1 who is {{proper-article-for (get qual "1") }} {{get qual "1"}}.
+        {{else}}
+          {{get qual "0"}} who are {{maybe-pluralize 2 (get qual "1")}}.
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul></td>
+    </tr>
+
+
+    <tr>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+      <td><p><strong>1&nbsp;administrator</strong></p>
+      <ul>
+        <li>who is a {{conjoin results.adminRequirements.qualifications with="or"}}.</li>
+        <li>
+          {{#if results.adminRequirements.nonTeachingPercent}}
+            Needs to spend {{results.adminRequirements.nonTeachingPercent}}% of time not teaching.
+          {{else}}
+            can be a full time teacher.
+          {{/if}}
+        </li>
+      </ul>
+      </td>
+    </tr>
+    {{/if}}
+  </tbody>
+</table>

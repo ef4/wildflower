@@ -8,4 +8,30 @@
     input, button {
         vertical-align: baseline;
     }
+
+}
+
+.printable-summary {
+    display: none;
+}
+
+@media print {
+    .licensing-finish {
+        display: none;
+    }
+    .printable-summary {
+        h1, h2 {
+            font-size: 24px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        td {
+            padding: 8px 4px !important;
+        }
+        ul {
+            padding-bottom: 4px !important;
+            margin-bottom: 0 !important;
+        }
+        display: initial;
+    }
 }
