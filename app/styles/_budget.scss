@@ -1,7 +1,41 @@
 .wf-budget {
-    max-width: 45em;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 18px;
+    padding-top: 6em;
+    color: $lighter-text;
+
+    p {
+        line-height: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    button {
+        padding-right: 0.4em;
+        border-radius: 7px;
+    }
+
+    .separator {
+        border-bottom: 1px solid $brand-tertiary;
+        margin-bottom: 1.5em;
+    }
+
+    .intro {
+        p {
+            text-align: center;
+        }
+    }
+
+    label {
+        display: block;
+        font-family: inherit;
+    }
+
+    input {
+        text-align: center;
+        width: 7em;
+        border-radius: 7px;
+        border: 3px solid $gray-lighter;
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
     code {
         font-style: normal;
@@ -9,32 +43,4 @@
         background-color: transparent;
     }
 
-    p {
-        font-style: italic;
-        letter-spacing: 0.1ex;
-        margin-bottom: 24px;
-    }
-
-    .questions > div {
-        margin-right: 3.5em;
-        margin-left: 3.5em;
-        margin-bottom: 12px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: baseline;
-
-        label {
-            flex: 1;
-            font-weight: normal;
-            &:after {
-                content: ":";
-            }
-        }
-        input {
-            text-align: right;
-            font-family: sans;
-            font-size: 1.2em;
-            max-width: 7em;
-        }
-    }
 }

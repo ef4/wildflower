@@ -2,32 +2,51 @@
 
   <div class="wf-budget">
     {{#liquid-if finished use="fade"}}
-    <div class="intro">
-      <h2>Your budget is ready.</h2>
-
-      <p>A spreadsheet named <code>{{filename}}</code> has been downloaded to your computer. You may also <a href="#" {{action "again"}}>go back and do it again.</a></p>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>Your budget is ready.</h2>
+        <p>A spreadsheet named <code>{{filename}}</code> has been downloaded to your computer. You may also <a href="#" {{action "again"}}>go back and do it again.</a></p>
+      </div>
     </div>
   {{else}}
-    <div class="intro">
-      <h2>Let us help create your Wildflower School budget.</h2>
-
-      <p>With some basic information, we'll pre-populate a financial model that you can customize.</p>
-    </div>
-
-    <div class="questions">
-      <div>
-        <label>First, tell us the total amount of your combined teacher salaries</label>
-        {{input value=salaries placeholder="$"}}
-      </div>
-
-      <div>
-        <label>Next, we'll need to know how much you will pay in monthly rent (not including utilities)</label>
-        {{input value=rent placeholder="$"}}
-      </div>
-      <div>
-        <button class="btn btn-primary" {{action "create"}}>Create Spreadsheet</button>
+    <div class="row intro">
+      <div class="col-sm-8 col-sm-offset-2">
+        <p>
+          Let us help create your Wildflower School budget. With some
+          basic information, we'll pre-populate a financial model that
+          you can customize.
+        </p>
       </div>
     </div>
+    <div class="row">
+      <div class="separator col-sm-10 col-sm-offset-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+
+      <p class="text-center">
+        <label for="salaries">
+          First, tell us the total amount of your combined teacher
+          salaries
+        </label>
+        {{input autofocus=true elementId="salaries" value=salaries placeholder="$"}}
+      </p>
+
+      <p class="text-center">
+        <label for="rent">
+          Next, we'll need to know how much you will pay in monthly rent
+          (not including utilities)
+        </label>
+        {{input elementId="rent" value=rent placeholder="$"}}
+      </p>
+
+      <p class="text-center">
+        <button class="btn btn-primary" {{action "create"}}>Create Spreadsheet <span class="glyphicon glyphicon-chevron-right"></span></button>
+      </p>
+      </div>
+    </div>
+
     {{/liquid-if}}
   </div>
 
