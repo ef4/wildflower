@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      {{#if documents}}
+        <p style="margin-top: 1.5em">
+          {{description}}
+        </p>
+        <ul class="list-unstyled" style="margin-left: 1.5em">
+        {{#each documents as |document|}}
+          <li><a target="_blank" href={{document.url}}>{{document.title}}</a></li>
+        {{/each}}
+        </ul>
+      {{else}}
+        <p style="margin-top: 1.5em">
+          {{empty}}
+        </p>
+      {{/if}}
+    </div>
+  </div>
+</div>

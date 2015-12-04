@@ -4,5 +4,7 @@ export default DS.Model.extend({
   classrooms: attr(),
   ageGroups: attr(),
   qualifications: attr(),
-  administrators: attr()
+  administrators: attr(),
+  forms: attr(),
+  templates: attr()
 });

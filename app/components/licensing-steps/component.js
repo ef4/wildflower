@@ -4,6 +4,8 @@ export const steps = [
   'setup',
   'teachers',
   'location',
+  'forms',
+  'templates',
   'finish'
 ];
 
