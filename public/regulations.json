@@ -4,6 +4,7 @@
       "type": "regulation",
       "id": "Massachusetts",
       "attributes": {
+        "forms-description": "Here are the forms you will need to fill out and submit to EEC:",
         "forms": [
           { "title": "EEC Application", "url": "https://drive.google.com/file/d/0B_ubT8m93FlAZllEZ0NmWkw4VWc/view" },
           { "title": "EEC Checklist of Required Documents", "url": "https://drive.google.com/file/d/0B_ubT8m93FlAY0wzMHJzX2lCc1E/view" },

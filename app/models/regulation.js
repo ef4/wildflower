@@ -6,5 +6,6 @@ export default DS.Model.extend({
   qualifications: attr(),
   administrators: attr(),
   forms: attr(),
+  formsDescription: attr('string'),
   templates: attr()
 });
