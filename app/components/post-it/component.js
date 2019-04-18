@@ -1,13 +1,16 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   targetAttachment: 'bottom left',
   attachment: 'top left',
-  notes: Ember.inject.service(),
-  allowed: Ember.computed.alias('notes.activated'),
-  active: Ember.computed('allowed', {
+  notes: service(),
+  allowed: alias('notes.activated'),
+  active: computed('allowed', {
     get() {
-      return this.get('allowed');
+      return this.allowed;
     },
     set(k,v) {
       return v;

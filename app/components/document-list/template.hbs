@@ -2,18 +2,18 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       {{#if documents}}
-        <p style="margin-top: 1.5em">
+        <p>
           {{description}}
         </p>
-        <ul class="list-unstyled" style="margin-left: 1.5em">
+        <ul class="list-unstyled" >
         {{#each documents as |document|}}
           <li>
-            <a target="_blank" href={{document.url}}>{{document.title}} <span>{{domain-hint document.url}}</span></a>
+            <a target="_blank" rel="noopener" href={{document.url}}>{{document.title}} <span>{{domain-hint document.url}}</span></a>
           </li>
         {{/each}}
         </ul>
       {{else}}
-        <p style="margin-top: 1.5em">
+        <p>
           {{empty}}
         </p>
       {{/if}}

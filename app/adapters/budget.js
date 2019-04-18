@@ -1,9 +1,9 @@
+import { inject as service } from '@ember/service';
 import DS from 'ember-data';
 import fetch from 'fetch';
-import Ember from 'ember';
 
 export default DS.JSONAPIAdapter.extend({
-  blobStore: Ember.inject.service(),
+  blobStore: service(),
 
   findRecord() {
     return fetch('budget-template.xlsx').then(response => response.arrayBuffer()).then(data => {
@@ -12,7 +12,7 @@ export default DS.JSONAPIAdapter.extend({
           id: 'template',
           type: 'budget',
           attributes: {
-            'blob-id': this.get('blobStore').push(data)
+            'blob-id': this.blobStore.push(data)
           }
         }
       };

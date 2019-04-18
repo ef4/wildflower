@@ -1,20 +1,21 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Service from '@ember/service';
 
-export default Ember.Service.extend({
-  _parser: Ember.computed(function() {
+export default Service.extend({
+  _parser: computed(function() {
     return new DOMParser();
   }),
 
-  _serializer: Ember.computed(function() {
+  _serializer: computed(function() {
     return new XMLSerializer();
   }),
 
 
   parse(string, contentType) {
-    return this.get('_parser').parseFromString(string, contentType);
+    return this._parser.parseFromString(string, contentType);
   },
 
   serialize(document) {
-    return this.get('_serializer').serializeToString(document);
+    return this._serializer.serializeToString(document);
   }
 });

@@ -1,16 +1,14 @@
 $ember-power-select-default-border-radius: 0px;
-$ember-power-select-default-border: 2px solid mix(#fff, $brand-primary, 35%);
-$ember-power-select-default-focus-border: $ember-power-select-default-border;
+$ember-power-select-border-color: mix(#fff, $brand-primary, 35%);
 $ember-power-select-placeholder-color: inherit;
 @import 'ember-power-select';
-.ember-power-select {
-    text-align: left;
-    .ember-power-select-trigger {
-        padding: 6px 32px 6px 12px;
-        background-color: $brand-tertiary-light;
-    }
+
+.ember-power-select-trigger {
+  text-align: left;
+  padding: 6px 32px 6px 12px;
+  background-color: $brand-tertiary-light;
 }
 
-.ember-power-select, .ember-power-select-options {
+.ember-power-select-trigger, .ember-power-select-options {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

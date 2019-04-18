@@ -1,3 +1,5 @@
+import Component from '@ember/component';
+import saveAs from 'file-saver';
 export const budgetConfig = [
   {
     onSheet: 'INPUT ASSUMPTIONS',
@@ -8,21 +10,18 @@ export const budgetConfig = [
   }
 ];
 
-/* global saveAs */
-import Ember from 'ember';
-
-export default Ember.Component.extend({
+export default Component.extend({
   filename: 'wildflower-school-budget.xlsx',
   actions: {
     create() {
-      let budget = this.get('budget');
+      let budget = this.budget;
       budgetConfig.forEach(sheetEntry => {
         let sheet = budget.sheet(sheetEntry.onSheet);
         sheetEntry.do.forEach(edit => {
           sheet.write(edit.into, this.get(edit.put));
         });
       });
-      saveAs(budget.asBlob(), this.get('filename'));
+      saveAs(budget.asBlob(), this.filename);
       this.set('finished', true);
     },
     again() {

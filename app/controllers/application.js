@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import { alias } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   queryParams: ['notes'],
-  noteService: Ember.inject.service('notes'),
-  notes: Ember.computed.alias('noteService.activated')
+  noteService: service('notes'),
+  notes: alias('noteService.activated')
 });

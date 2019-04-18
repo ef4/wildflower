@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import { steps, nextRoute } from 'wildflower/components/licensing-steps/component';
 
 // You can change this to invalidate older models that users have
 // cached in localStorage.
 const modelVersion = 'v2';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     let isFirstStep = this.routeName === 'licensing.' + steps[0];
     return this.store.findRecord('licensing', modelVersion).catch(() => {

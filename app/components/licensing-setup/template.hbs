@@ -14,7 +14,7 @@
 
     {{#liquid-bind (obj state=model.state regs=model.stateRegulation) use="fade" as |current|}}
       {{#if current.regs}}
-        <a onclick={{action changeStep 1}} class="btn btn-default">Continue</a>
+        <a role="button" onclick={{action changeStep 1}} class="btn btn-default">Continue</a>
       {{else if current.state}}
         <div class="alert alert-warning" role="alert">We don't have regulations for this state yet. Please <a href="http://wildflowerschools.org/contact">get in touch</a> so we can work together to add them.</div>
       {{else}}

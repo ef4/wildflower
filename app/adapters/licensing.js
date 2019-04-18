@@ -1,4 +1,5 @@
-import DS from 'ember-data';
-export default DS.LSAdapter.extend({
+import { LSAdapter } from 'ember-localstorage-adapter';
+
+export default LSAdapter.extend({
   namespace: 'wildflower/licensing'
 });

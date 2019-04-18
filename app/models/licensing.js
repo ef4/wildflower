@@ -1,19 +1,19 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
 const { attr } = DS;
 
 export default DS.Model.extend({
   state: attr(),
-  stateRegulation: Ember.computed('state', function() {
+  stateRegulation: computed('state', function() {
     if (this.get('state.name')) {
       return this.store.peekRecord('regulation', this.get('state.name'));
     }
   }),
 
   ageRangeDesc: attr(),
-  ageRange: Ember.computed('stateRegulation', 'ageRangeDesc', {
+  ageRange: computed('stateRegulation', 'ageRangeDesc', {
     get() {
-      let desc = this.get('ageRangeDesc');
+      let desc = this.ageRangeDesc;
       return this.get('stateRegulation.classrooms').find(classroom => classroom.description === desc);
     },
     set(k, v) {
@@ -24,17 +24,17 @@ export default DS.Model.extend({
 
   classSize: attr(),
 
-  minTeachers: Ember.computed('classSize', 'ageRange', function() {
-    let ageRange = this.get('ageRange');
-    let classSize = this.get('classSize');
+  minTeachers: computed('classSize', 'ageRange', function() {
+    let ageRange = this.ageRange;
+    let classSize = this.classSize;
     let entry = ageRange.ratios.find(([[fromStudents, toStudents]]) => classSize >= fromStudents && classSize <= toStudents);
     if (entry) {
       return entry[1];
     }
   }),
 
-  adminRequirements: Ember.computed('classSize', 'ageRange', function() {
-    let classSize = this.get('classSize');
+  adminRequirements: computed('classSize', 'ageRange', function() {
+    let classSize = this.classSize;
     let groups = this.get('ageRange.ageGroups');
     return this.get('stateRegulation.administrators').find(
       entry => entry.minStudents <= classSize &&
@@ -43,20 +43,20 @@ export default DS.Model.extend({
     );
   }),
 
-  minSquareFeet: Ember.computed('classSize', 'ageRange', function() {
-    return this.get('classSize') * 50;
+  minSquareFeet: computed('classSize', 'ageRange', function() {
+    return this.classSize * 50;
   }),
 
-  recommendedSquareFeet: Ember.computed('classSize', 'ageRange', function() {
-    return this.get('classSize') * 70;
+  recommendedSquareFeet: computed('classSize', 'ageRange', function() {
+    return this.classSize * 70;
   }),
 
-  completedSteps: Ember.computed('stateRegulation', 'classSize', 'ageRange', function() {
+  completedSteps: computed('stateRegulation', 'classSize', 'ageRange', function() {
     let steps = [];
-    if (this.get('stateRegulation')) {
+    if (this.stateRegulation) {
       steps.push('setup');
     }
-    if (this.get('classSize') && this.get('ageRange')) {
+    if (this.classSize && this.ageRange) {
       steps.push('teachers');
       steps.push('location');
       steps.push('forms');

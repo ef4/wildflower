@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   actions: {
     sendEmail(/* email */) {
       this.set('sentEmail', true);
@@ -9,8 +9,8 @@ export default Ember.Component.extend({
       window.print();
     },
     reset() {
-      this.get('model').destroyRecord().then(() => {
-        this.get('changeStep')(-1);
+      this.model.destroyRecord().then(() => {
+        this.changeStep(-1);
       });
     }
   }

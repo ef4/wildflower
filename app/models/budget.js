@@ -1,24 +1,25 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
+import $ from 'jquery';
 import DS from 'ember-data';
-const { $ } = Ember;
 /* global JSZip */
 
 export default DS.Model.extend({
   blobId: DS.attr(),
-  blobStore: Ember.inject.service(),
-  domParser: Ember.inject.service(),
+  blobStore: service(),
+  domParser: service(),
 
   init() {
     this._super();
     this.documentCache = Object.create(null);
   },
 
-  _blob: Ember.computed('blobId', function() {
-    return this.get('blobStore').find(this.get('blobId'));
+  _blob: computed('blobId', function() {
+    return this.blobStore.find(this.blobId);
   }),
 
-  zipFile: Ember.computed('blob', function() {
-    return new JSZip(this.get('_blob'));
+  zipFile: computed('blob', function() {
+    return new JSZip(this._blob);
   }),
 
   document(name) {
@@ -26,7 +27,7 @@ export default DS.Model.extend({
     if (doc) {
       return doc;
     }
-    return this.documentCache[name] = this.get('domParser').parse(this.get('zipFile').file(name).asText(), 'text/xml');
+    return this.documentCache[name] = this.domParser.parse(this.zipFile.file(name).asText(), 'text/xml');
   },
 
   sheet(name) {
@@ -50,8 +51,8 @@ export default DS.Model.extend({
   },
 
   asBlob() {
-    let zip = this.get('zipFile');
-    let domParser = this.get('domParser');
+    let zip = this.zipFile;
+    let domParser = this.domParser;
     Object.keys(this.documentCache).forEach(filename => {
       let doc = this.documentCache[filename];
       zip.file(filename, domParser.serialize(doc));

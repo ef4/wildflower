@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
 export const steps = [
   'setup',
@@ -20,6 +20,6 @@ export function nextRoute(currentRoute, stepSize=1) {
   }
 }
 
-export default Ember.Component.extend({
+export default Component.extend({
   steps
 });

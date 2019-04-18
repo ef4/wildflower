@@ -1,5 +1,5 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
 
-export default Ember.Helper.helper(function([word]) {
+export default buildHelper(function([word]) {
   return /^[aeiou]/i.test(word) ? 'an' : 'a';
 });

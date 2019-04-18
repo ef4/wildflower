@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
 
 // TODO: steps that don't have prerequisites met should be locked
-export default Ember.Helper.helper(function() {
+export default buildHelper(function() {
   return false;
 });
